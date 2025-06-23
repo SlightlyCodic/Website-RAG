@@ -6,3 +6,4 @@ langchain_community
 chromadb
 huggingface_hub
 python-dotenv 
+sentence-transformers
