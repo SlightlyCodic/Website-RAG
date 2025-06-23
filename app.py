@@ -47,7 +47,7 @@ def parse_website(url, output_file="website_text.txt"):
 
 # --- RAG chatbot setup ---
 from langchain_community.chat_models import ChatOpenAI
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -67,7 +67,7 @@ def get_qa_chain():
             st.error("No text chunks created from website data.")
             return None
         embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        vectorstore = Chroma.from_documents(splits, embeddings)
+        vectorstore = FAISS.from_documents(splits, embeddings)
         retriever = vectorstore.as_retriever()
         llm = ChatOpenAI(
             model="openrouter/meta-llama/llama-3-8b-instruct",
