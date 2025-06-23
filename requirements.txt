@@ -1,0 +1,8 @@
+streamlit
+requests
+beautifulsoup4
+langchain
+langchain_community
+chromadb
+huggingface_hub
+python-dotenv 
