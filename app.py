@@ -70,7 +70,7 @@ def get_qa_chain():
         vectorstore = FAISS.from_documents(splits, embeddings)
         retriever = vectorstore.as_retriever()
         llm = ChatOpenAI(
-            model="meta-llama/llama-3.3-8b-instruct:free",
+            model="meta-llama/llama-3-8b-instruct:free",
             base_url="https://openrouter.ai/api/v1",
             temperature=0,
         )
@@ -166,17 +166,53 @@ st.markdown(
         padding: 0.7em 1em;
         margin-bottom: 0.7em;
         background: #fafbfc;
+        color: #262730;
     }
     .chat-message.user {
         background: #e3f2fd;
         border-color: #90caf9;
+        color: #262730;
     }
     .chat-message.bot {
         background: #f1f8e9;
         border-color: #aed581;
+        color: #262730;
     }
     .stTextInput>div>div>input {
         font-size: 1.1em;
+    }
+    
+    /* Dark mode overrides */
+    @media (prefers-color-scheme: dark) {
+        .chat-window {
+            border-color: #4a4a4a;
+            background: #262730;
+        }
+        .chat-message {
+            border-color: #4a4a4a;
+            background: #1e1e1e;
+            color: #fafafa;
+        }
+        .chat-message.user {
+            background: #1e3a5f;
+            border-color: #4a9eff;
+            color: #fafafa;
+        }
+        .chat-message.bot {
+            background: #1e3a1e;
+            border-color: #4a9e4a;
+            color: #fafafa;
+        }
+    }
+    
+    /* Streamlit dark mode specific */
+    [data-testid="stAppViewContainer"] [data-testid="stSidebar"] {
+        background-color: #262730;
+    }
+    
+    /* Ensure text is readable in both themes */
+    .stMarkdown, .stText, .stTitle, .stSubheader {
+        color: inherit;
     }
     </style>
     """,
