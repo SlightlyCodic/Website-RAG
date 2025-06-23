@@ -2,6 +2,8 @@
 
 Website RAG Chatbot is a Python-based Streamlit web app that lets you chat with the content of any public website using Retrieval-Augmented Generation (RAG). It parses websites, builds a vector store from their content, and enables LLM-powered conversations based solely on the extracted data.
 
+Deployed Website Link - https://ragwebsitebot.streamlit.app/
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the required dependencies.
