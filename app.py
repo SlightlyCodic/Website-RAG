@@ -70,7 +70,7 @@ def get_qa_chain():
         vectorstore = FAISS.from_documents(splits, embeddings)
         retriever = vectorstore.as_retriever()
         llm = ChatOpenAI(
-            model="meta-llama/llama-3-8b-instruct:free",
+            model="meta-llama/llama-3.3-8b-instruct:free",
             base_url="https://openrouter.ai/api/v1",
             temperature=0,
         )
