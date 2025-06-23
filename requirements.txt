@@ -6,4 +6,5 @@ langchain_community
 chromadb
 huggingface_hub
 python-dotenv 
+protobuf==3.20.3
 sentence-transformers
